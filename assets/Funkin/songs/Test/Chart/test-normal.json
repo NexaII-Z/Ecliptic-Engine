@@ -1,0 +1,30 @@
+{
+	"ecliptic_chart": true,
+	"song": "Test",
+	"bpm": 150,
+	"speed": 1.6,
+	"player1": "bf",
+	"player2": "dad",
+	"gf": "gf",
+	"stage": "stage",
+	"needsVoices": false,
+	"events": [],
+	"sections": [
+		{"beats":4,"mustHitSection":false,"bpmChange":false,"bpm":150,"notes":[]},
+		{"beats":4,"mustHitSection":false,"bpmChange":false,"bpm":150,"notes":[]},
+		{"beats":4,"mustHitSection":true,"bpmChange":false,"bpm":150,"notes":[]},
+		{"beats":4,"mustHitSection":true,"bpmChange":false,"bpm":150,"notes":[]},
+		{"beats":4,"mustHitSection":false,"bpmChange":false,"bpm":150,"notes":[
+			[12800,4,0],[13200,5,0],[13600,6,0],[14000,7,0]
+		]},
+		{"beats":4,"mustHitSection":false,"bpmChange":false,"bpm":150,"notes":[
+			[14400,4,0],[14800,6,0],[15200,5,0],[15600,7,0]
+		]},
+		{"beats":4,"mustHitSection":true,"bpmChange":false,"bpm":150,"notes":[
+			[16000,0,0],[16400,2,0],[16800,1,0],[17200,3,0]
+		]},
+		{"beats":4,"mustHitSection":true,"bpmChange":false,"bpm":150,"notes":[
+			[17600,0,0],[18000,1,0],[18400,2,0],[18800,3,0]
+		]}
+	]
+}

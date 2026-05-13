@@ -1,0 +1,19 @@
+{
+	"ecliptic_char": true,
+	"image": "characters/bf-dead",
+	"healthicon": "bf",
+	"scale": 1,
+	"flip_x": true,
+	"no_antialiasing": false,
+	"position": [0, 350],
+	"camera_position": [0, 0],
+	"healthbar_colors": [49, 176, 209],
+	"sing_duration": 4,
+	"animations": [
+		{"anim":"idle","name":"BF idle dance","fps":24,"loop":false,"indices":[],"offsets":[0,0]},
+		{"anim":"singLEFT","name":"BF NOTE LEFT0","fps":24,"loop":false,"indices":[],"offsets":[0,0]},
+		{"anim":"singDOWN","name":"BF NOTE DOWN0","fps":24,"loop":false,"indices":[],"offsets":[0,0]},
+		{"anim":"singUP","name":"BF NOTE UP0","fps":24,"loop":false,"indices":[],"offsets":[0,0]},
+		{"anim":"singRIGHT","name":"BF NOTE RIGHT0","fps":24,"loop":false,"indices":[],"offsets":[0,0]}
+	]
+}
