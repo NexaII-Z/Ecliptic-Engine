@@ -24,6 +24,7 @@ package mobile.input;
 
 import flixel.group.FlxSpriteGroup.FlxTypedSpriteGroup;
 import haxe.ds.Map;
+import mobile.objects.TouchButton;
 
 /**
  * A TouchButton group with functions for input handling
