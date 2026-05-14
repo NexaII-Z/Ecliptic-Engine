@@ -13,9 +13,13 @@
 	<!-- Source -->
 	<source path="source" />
 
-	<!-- Assets -->
-	<assets path="assets" rename="assets" exclude="*.ogg" if="html5" />
-	<assets path="assets" rename="assets" exclude="*.mp3" unless="html5" />
+<!-- Assets -->
+<assets path="assets" rename="assets" exclude="*.ogg,*.ttf" if="html5" />
+<assets path="assets" rename="assets" exclude="*.mp3,*.ttf" unless="html5" />
+
+<!-- Fonts as raw files (bypasses Lime's broken woff converter) -->
+<assets path="assets/Mains/fonts" rename="assets/Mains/fonts" include="*.ttf" />
+
 
 	<!-- Window -->
 	<window width="1280" height="720" fps="60" background="#000000" hardware="true" vsync="false" />
