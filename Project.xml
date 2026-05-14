@@ -1,53 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <project>
 
-	<!-- ============================================================ -->
-	<!--  ECLIPTIC ENGINE                                             -->
-	<!-- ============================================================ -->
-
 	<meta title="Ecliptic Engine" package="com.nexaii.ecliptic" version="0.1.0" company="NexaII-Z" />
 
-	<!-- ── Libraries ──────────────────────────────────────────── -->
+	<!-- Libraries -->
 	<haxelib name="openfl" />
 	<haxelib name="flixel" />
 	<haxelib name="flixel-addons" />
 	<haxelib name="flixel-ui" />
 	<haxelib name="hscript" />
-	<haxelib name="discord_rpc"  if="desktop" />
-	<haxelib name="linc_luajit"  if="desktop" />
-	<haxelib name="hxCodec"      if="desktop" />
 
-	<!-- ── Source ─────────────────────────────────────────────── -->
+	<!-- Source -->
 	<source path="source" />
 
-	<!-- ── Assets ─────────────────────────────────────────────── -->
-	<!-- HTML5: exclude .ogg, use .mp3 -->
+	<!-- Assets -->
 	<assets path="assets" rename="assets" exclude="*.ogg" if="html5" />
-	<!-- Desktop/mobile: exclude .mp3, use .ogg -->
 	<assets path="assets" rename="assets" exclude="*.mp3" unless="html5" />
 
-	<!-- ── Window ─────────────────────────────────────────────── -->
+	<!-- Window -->
 	<window width="1280" height="720" fps="60" background="#000000" hardware="true" vsync="false" />
-	<window resizable="true"    unless="mobile" />
-	<window fullscreen="false"  unless="mobile" />
+	<window resizable="true"   unless="mobile" />
+	<window fullscreen="false" unless="mobile" />
 
-	<!-- ── Defines ────────────────────────────────────────────── -->
-	<define name="FLX_NO_MOUSE_ADVANCED_INPUT" />
-	<define name="FLX_NO_GAMEPAD" if="html5" />
-	<define name="HXCPP_STACK_LINE" if="debug" />
-
-	<!-- Mobile -->
+	<!-- Defines -->
 	<define name="mobile" if="android" />
 	<define name="mobile" if="ios" />
 
-	<!-- ── Optimization ───────────────────────────────────────── -->
-	<haxeflag name="-dce"        value="std" unless="debug" />
-	<haxeflag name="--no-traces"             unless="debug" />
+	<!-- Optimization (use correct flag for flixel 6) -->
+	<haxedefine name="no-traces" unless="debug" />
 
-	<!-- ── Icons ──────────────────────────────────────────────── -->
+	<!-- Icons -->
 	<!-- <icon path="assets/icon.png" /> -->
 
-	<!-- ── Android ────────────────────────────────────────────── -->
+	<!-- Android -->
 	<android target-sdk-version="33" if="android" />
 	<config:android install-location="preferExternal" if="android" />
 
