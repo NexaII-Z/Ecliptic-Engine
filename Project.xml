@@ -13,13 +13,13 @@
 	<!-- Source -->
 	<source path="source" />
 
-<!-- Assets -->
-<assets path="assets" rename="assets" exclude="*.ogg,*.ttf" if="html5" />
-<assets path="assets" rename="assets" exclude="*.mp3,*.ttf" unless="html5" />
+	<!-- Assets — exclude fonts and audio by platform, then re-add fonts as raw -->
+	<assets path="assets" rename="assets" exclude="*.ogg,*.ttf,*.otf" if="html5" />
+	<assets path="assets" rename="assets" exclude="*.mp3,*.ttf,*.otf" unless="html5" />
 
-<!-- Fonts as raw files (bypasses Lime's broken woff converter) -->
-<assets path="assets/Mains/fonts" rename="assets/Mains/fonts" include="*.ttf" />
-
+	<!-- Re-add fonts as plain file assets (skips Lime's broken woff converter) -->
+	<assets path="assets/Mains/fonts/vcr.ttf"         rename="assets/Mains/fonts/vcr.ttf"         type="binary" />
+	<assets path="assets/Mains/fonts/pixel-latin.ttf"  rename="assets/Mains/fonts/pixel-latin.ttf"  type="binary" />
 
 	<!-- Window -->
 	<window width="1280" height="720" fps="60" background="#000000" hardware="true" vsync="false" />
@@ -30,11 +30,8 @@
 	<define name="mobile" if="android" />
 	<define name="mobile" if="ios" />
 
-	<!-- Optimization (use correct flag for flixel 6) -->
+	<!-- Optimization -->
 	<haxedefine name="no-traces" unless="debug" />
-
-	<!-- Icons -->
-	<!-- <icon path="assets/icon.png" /> -->
 
 	<!-- Android -->
 	<android target-sdk-version="33" if="android" />
