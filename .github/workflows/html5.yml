@@ -10,10 +10,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
       - name: Setup Haxe
         uses: krdlab/setup-haxe@master
         with:
           haxe-version: 4.3.4
+
       - name: Install Haxelibs
         run: |
           haxelib install lime --quiet
@@ -23,8 +25,17 @@ jobs:
           haxelib install flixel-ui --quiet
           haxelib install hscript --quiet
           haxelib run lime setup -alias -y
+
+      - name: Patch Lime font converter (fix ascender crash)
+        run: |
+          LIME_PATH=$(haxelib path lime | head -1 | tr -d '\n')
+          # Comment out the ascender field access that crashes
+          find "$LIME_PATH" -name "HTML5Platform.hx" | xargs sed -i 's/\.ascender/.ascender ?? 0/g' 2>/dev/null || true
+          find "$LIME_PATH" -name "*.hx" -exec grep -l "ascender" {} \; | xargs sed -i 's/font\.ascender/\(font\.ascender ?? 0\)/g' 2>/dev/null || true
+
       - name: Build HTML5
         run: lime build html5 -final
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
