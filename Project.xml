@@ -13,13 +13,12 @@
 	<!-- Source -->
 	<source path="source" />
 
-	<!-- Assets — exclude fonts and audio by platform, then re-add fonts as raw -->
-	<assets path="assets" rename="assets" exclude="*.ogg,*.ttf,*.otf" if="html5" />
-	<assets path="assets" rename="assets" exclude="*.mp3,*.ttf,*.otf" unless="html5" />
+	<!-- Custom HTML5 template (loads Google Fonts instead of local ttf) -->
+	<template path="templates/html5" if="html5" />
 
-	<!-- Re-add fonts as plain file assets (skips Lime's broken woff converter) -->
-	<assets path="assets/Mains/fonts/vcr.ttf"         rename="assets/Mains/fonts/vcr.ttf"         type="binary" />
-	<assets path="assets/Mains/fonts/pixel-latin.ttf"  rename="assets/Mains/fonts/pixel-latin.ttf"  type="binary" />
+	<!-- Assets: exclude ALL fonts on html5 to avoid Lime woff crash -->
+	<assets path="assets" rename="assets" exclude="*.ogg,*.ttf,*.otf" if="html5" />
+	<assets path="assets" rename="assets" exclude="*.mp3" unless="html5" />
 
 	<!-- Window -->
 	<window width="1280" height="720" fps="60" background="#000000" hardware="true" vsync="false" />
