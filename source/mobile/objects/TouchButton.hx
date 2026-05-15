@@ -4,6 +4,7 @@ import flixel.input.FlxInput;
 import flixel.input.FlxPointer;
 import flixel.input.IFlxInput;
 import flixel.util.FlxDestroyUtil.IFlxDestroyable;
+import flixel.system.FlxAssets.FlxShader;
 import mobile.input.MobileInputID;
 
 class TouchButton extends TypedTouchButton<FlxSprite>
